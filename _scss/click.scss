@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    touch-action: manipulation;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #dfdfdf;
+    background-color: #333;
+    text-transform: uppercase;
+    position: relative;
+
+    .timer {
+        position: absolute;
+        top: 100px;
+        left: auto;
+        z-index: 100;
+        font-size: 2em;
+
+        @media (min-width: 1200px) {
+            top: 100px;
+            left: 100px;
+            font-size: unset;
+        }
+    }
+
+    .score {
+        position: absolute;
+        top: 150px;
+        right: auto;
+        z-index: 100;
+        font-size: 2em;
+        
+        @media (min-width: 1200px) {
+            top: 100px;
+            right: 100px;
+            font-size: unset;
+        }
+    }
+
+    h1 {
+        z-index: 100;
+        margin: 30px;
+        text-align: center;
+    }
+
+    .btn {
+        text-transform: uppercase;
+        padding: 10px;
+        width: 50%;
+        font-size: 1.5em;
+        background-color: transparent;
+        border: 2px solid #dfdfdf;
+        color: #dfdfdf;
+        z-index: 100;
+
+        @media (min-width: 1200px) {
+            padding: 5px;
+            width: 10%;
+            font-size: unset;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
+
+    .finalScore {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        z-index: 110;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        text-align: center;
+        flex-direction: column;
+
+        p {
+            margin: 40px;
+            font-size: 1.5em;
+
+            @media (min-width: 1200px) {
+                font-size: unset;
+            }
+        }
+
+        .retry {
+            text-transform: uppercase;
+            padding: 10px;
+            width: 50%;
+            font-size: 1em;
+            background-color: transparent;
+            border: 2px solid #dfdfdf;
+            color: #dfdfdf;
+            z-index: 110;
+
+            @media (min-width: 1200px) {
+                padding: 5px;
+                width: 10%;
+                font-size: .8em;
+            }
+    
+            &:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .water-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgb(12, 121, 148);
+    }
+}
+
+.particle {
+    background-color: #dfdfdf;
+    width: 6px;
+    height: 6px;
+    top: 0;
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh) } //hvis sne'en skal sidelænds skal der burges transform: translate(100vh, 100vw);
+}

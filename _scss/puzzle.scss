@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .table {
+        background-color: #444;
+        width: 200px;
+        height: 200px;
+
+        display: grid;
+        grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+        grid-gap: 5px;
+        padding: 5px;
+        grid-template-areas: 
+        'A B C'
+        'D E F'
+        'G H I';
+
+        .tile {
+            width: 100%;
+            height: 100%;
+            background-color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.available {
+                cursor: pointer;
+            }
+
+            &.empty {
+                background-color: #555;
+            }
+        }  
+    }
+}
