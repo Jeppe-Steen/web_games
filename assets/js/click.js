@@ -3,7 +3,7 @@ let score = document.querySelector(".score");
 let timeLeft = 100;
 let waterHeight = 0;
 
-document.querySelector(".timer").innerHTML = timeLeft + " seconds";
+document.querySelector(".timer").innerHTML = timeLeft + " milliseconds";
 document.querySelector(".score").innerHTML = 0 + " clicks";
 
 function test() {
@@ -13,10 +13,10 @@ function test() {
         if(timeLeft <= 0) {
             openScore();
             clearInterval();
-            document.querySelector(".timer").innerHTML = 0 + " seconds";
+            document.querySelector(".timer").innerHTML = 0 + " milliseconds";
         } else {
             document.querySelector(".water-container").style.height = waterHeight + "vh";
-            document.querySelector(".timer").innerHTML = timeLeft + " seconds";
+            document.querySelector(".timer").innerHTML = timeLeft + " milliseconds";
         }
         waterHeight += 1;
         timeLeft -= 1;
